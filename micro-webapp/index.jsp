@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2>Jenkins Successfully Deloyed War file in Tomcat using pipleline project!</h2>
+<h2>first job : connect VSCode with github and push the code</h2>
 </body>
 </html>
