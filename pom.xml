@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.jenkins.demo</groupId>
-  <artifactId>k8s-setup</artifactId>
+  <artifactId>k8sWebapp</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <name>k8s-setup</name>
@@ -16,7 +16,7 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>k8s-setup</finalName>
+    <finalName>k8sWebApp</finalName>
     <plugins>
          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
