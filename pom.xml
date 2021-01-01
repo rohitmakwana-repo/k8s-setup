@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.jenkins.demo</groupId>
-  <artifactId>micro-webapp</artifactId>
+  <artifactId>k8s-setup</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>micro-webapp</name>
+  <name>k8s-setup</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -16,6 +16,16 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>micro-webapp</finalName>
+    <finalName>k8s-setup</finalName>
+    <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>2.6</version>
+            <configuration>
+                <failOnMissingWebXml>false</failOnMissingWebXml>
+            </configuration>
+        </plugin>
+      </plugins>
   </build>
 </project>
