@@ -1,5 +1,6 @@
 pipeline{
-    agent any
+    //agent any
+    agent { label 'k8s-Node' }
     tools{
         maven '3.6.0'
     }
