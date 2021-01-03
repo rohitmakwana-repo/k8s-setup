@@ -15,7 +15,7 @@ pipeline{
         stage('Build') {
             steps {
                 sh 'mvn --version'
-                sh 'mvn clean install'
+                sh 'mvn -T 1C install -DskipTests'
             }
         }
         stage('Docker Build and Tag') {
@@ -37,14 +37,14 @@ pipeline{
                   
           }
         }
-        stage('Run Docker container on Jenkins Agent') {
+        //stage('Run Docker container on Jenkins Agent') {
              
-            steps 
-   {
-                sh "docker run -d -p 8002:8080 rohitmakwana/k8swebapp"
+           // steps 
+   //{
+                //sh "docker run -d -p 8002:8080 rohitmakwana/k8swebapp"
  
-            }
-        }
+            //}
+       // }
         //stage('Run Docker container on remote hosts') {
           
           //  steps {
@@ -52,6 +52,14 @@ pipeline{
  
             //}
         //}
+        stage('Deploy on K8s') {
+             
+            steps 
+   {
+                kubernetesDeploy configs: 'deployment.yaml', kubeConfig: [path: ''], kubeconfigId: 'KUBERNETES_CLUSTER_CONFIG', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
+ 
+            }
+        }
     }
         
         
